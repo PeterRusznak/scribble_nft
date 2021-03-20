@@ -10,7 +10,7 @@ function App() {
   const [balance, setBalance] = useState();
   const [name, setName] = useState();
   const [symbol, setSymbol] = useState();
-  const [uri, setURI] = useState();
+
 
   const loadWeb3 = async () => {
     if (window.ethereum) {
@@ -46,10 +46,6 @@ function App() {
       contract.methods.symbol().call(function (err, res) {
         setSymbol(res)
       });
-      contract.methods.tokenURI(0).call(function (err, res) {
-        console.log("URI")
-        setURI(res)
-      });
     } else {
       alert("Wrong NETWORK")
     }
@@ -69,7 +65,7 @@ function App() {
       <p>My Metamask Account: <b>{account} </b></p>
       <p>My Balance: <b>{balance}</b> </p>
       <p>Deployed Contract's Name / Symbol:<b> {name}/{symbol} </b></p>
-      <p>URI: <b>{uri} </b></p>
+
       <CanvasComponent
         deployedContract={deployedContract}
         account={account}

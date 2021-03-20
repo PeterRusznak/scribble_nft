@@ -18,15 +18,15 @@ const CanvasComponent = ({ deployedContract, account }) => {
     const download = () => {
         let canvas = canvasRef.current.canvasContainer.children[1];
         let dataUrl = canvas.toDataURL("image/png");
-        console.log(typeof dataUrl)
         const buffer = Buffer(dataUrl.split(",")[1], 'base64');
+        console.log(buffer)
         ipfs.files.add(buffer, (error, result) => {
             if (result) {
                 metadata.image = INFURA_HTTPS + result[0].hash;
                 console.log("image uploaded to IPFS image URI:" + metadata.image)
                 console.log(metadata)
-                let buf = Buffer.from(JSON.stringify(metadata));
-                ipfs.files.add(buf, (error, secondResult) => {
+                let metadataBuffer = Buffer.from(JSON.stringify(metadata));
+                ipfs.files.add(metadataBuffer, (error, secondResult) => {
                     if (secondResult) {
                         const tokenURI = INFURA_HTTPS + secondResult[0].hash;
                         console.log("Metadata uploaded to IPFS image as JSON URI:" + tokenURI)
