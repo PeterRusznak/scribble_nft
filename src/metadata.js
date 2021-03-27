@@ -1,5 +1,5 @@
 let metadata = {
-    "name": "ez a neve",
+    "name": "Here comes the name",
     "description": "no need for this",
     "image": "image",
     "attributes": []

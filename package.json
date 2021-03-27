@@ -7,8 +7,6 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "babel-polyfill": "^6.26.0",
-    "babel-register": "^6.26.0",
     "ipfs-api": "^26.1.2",
     "ipfs-http-client": "^49.0.4",
     "react": "^17.0.1",
