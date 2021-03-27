@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract DrawingCollectible is ERC721, Ownable {
     uint256 public tokenCounter;
 
-    constructor() public ERC721("Drawings", "DRA") {
+    constructor() public ERC721("Drawing", "DRW") {
         tokenCounter = 0;
     }
 
